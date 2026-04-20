@@ -1,3 +1,5 @@
+package Base;
+
 public class Produk {
     private String nama;
     String kategori;
