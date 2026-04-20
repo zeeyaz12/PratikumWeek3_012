@@ -18,4 +18,14 @@ public class Produk {
         System.out.println("-------------");
 
     }
+
+	public char[] getHarga() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'getHarga'");
+	}
+
+    public char[] getStok() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getStok'");
+    }
 }

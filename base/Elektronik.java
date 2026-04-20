@@ -12,7 +12,7 @@ public class Elektronik extends Produk {
         System.out.println("masa garansi: " +  masaGaransi);
     }
     
-    public void setGransi(int masaGaransi){
+    public void setGaransi(int masaGaransi){
         this.masaGaransi = masaGaransi;
     
     }
