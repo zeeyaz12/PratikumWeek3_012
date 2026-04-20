@@ -1,15 +1,27 @@
 //package: berbeda, bukan subclass - class Main
 
+import Base.Elektronik;
+import Base.Makanan;
+import Base.Minuman;
+import Base.Produk;
+
 public class Main{
     public static void main(String[] args) {
-        Produk p = new Produk("Indomie Goreng", 3500, 100, "Makanan");
+        System.out.println(produk.getHarga());
+        System.out.println(produk.getStok());
 
-        System.out.println(p.stok); // public - boleh
-        // System.out.println(p.harga); // ERROR - proctected, bukan subclass
-        // System.out.println(p.kategori); //ERROR - default, beda package
-        // System.out.println(p.nama); //ERROR - private
+        Elektronik elektronik = new Elektronik("Mesin Cuci", 10000000, 5, 1);
 
-        p.tampilkanInfo(); // public method - boleh
+        elektronik.setGaransi(12);
+        elektronik.tampilkanData();
+
+        Makanan makanan = new Makanan("Aldi's Burger", 5000, 100, 1);
+        makanan.setExpired(2);
+        makanan.tampilkanData();
+
+        Minuman minuman = new Minuman("Iced Matcha", 12000, 50, 1);
+        minuman.setExpired(2);
+        minuman.tampilkanData();
     }
 
 }
