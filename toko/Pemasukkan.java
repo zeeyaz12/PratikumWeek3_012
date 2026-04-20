@@ -1,7 +1,5 @@
 package toko;
 
-import base.Produk; // import class produk dari package elektronik
-
 // package: elektronik (berbeda) - subclass dari produk
 class Pemasukkan extends Produk{
     private double totalPemasukkan;

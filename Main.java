@@ -1,7 +1,5 @@
 //package: berbeda, bukan subclass - class Main
 
-import base.Produk; // import class Produk dari package elektronik
-
 public class Main{
     public static void main(String[] args) {
         Produk p = new Produk("Indomie Goreng", 3500, 100, "Makanan");
