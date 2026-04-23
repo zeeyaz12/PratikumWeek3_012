@@ -12,6 +12,22 @@ public class Produk {
         this.stok = stok;
         this.kategori = kategori;
     }
+    public String getNama(){
+        return nama;
+    }
+    public int getStok(){
+        return stok;
+    }
+    public double getHarga(){
+        return harga;
+    }
+    public void setHarga(double harga){
+        this.harga = harga;
+    }
+    public void setStok(int Stok){
+        this.stok = stok;
+    }
+
 
     public void tampilkanInfo(){
         System.out.println("Produk: " + nama);
