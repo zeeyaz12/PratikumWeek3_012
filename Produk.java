@@ -1,43 +1,56 @@
-
-
-public class Produk {
+abstract public class Produk {
     private String nama;
     public String kategori;
     private double harga;
     private int stok;
 
-    public Produk (String nama, double harga, int stok, String kategori){
+    public Produk(String nama, double harga, int stok, String kategori) {
         this.nama = nama;
         this.harga = harga;
         this.stok = stok;
         this.kategori = kategori;
     }
 
-    public String getNama(){
+    public String getNama() {
         return nama;
     }
 
-    public double getHarga(){
+    public double getHarga() {
         return harga;
     }
 
-    public int getStok(){
+    public int getStok() {
         return stok;
     }
 
-    public void setHarga(double harga){
+    public void setHarga(double harga) {
         this.harga = harga;
     }
 
-    public void setStok(int stok){
+    public void setStok(int stok) {
         this.stok = stok;
     }
 
-public void tampilInfo(){
-    System.out.println("Produk      : " + nama);
-    System.out.println("Kategori    : " + kategori);
-    System.out.println("Harga       : Rp" + harga);
-    System.out.println("Stok        : " + stok);
-    System.out.println("-------------------");
-}
+    public double hitungTotalHarga(int jumlahBeli){
+        return harga * jumlahBeli;
+    }
+
+    public void beli(int jumlahBeli){
+        if(jumlahBeli <= 0){
+            System.out.println("Jumlah beli harus lebih dari 0");
+            return;
+        }
+
+        if(jumlahBeli > stok){
+            System.out.println("Stok: " + nama + " tidak cukup! Tersisa: " + stok);
+            return;
+        }
+
+        stok -= jumlahBeli;
+        System.out.println("Stok " + nama + " x" + jumlahBeli + " = Rp" + hitungTotalHarga(jumlahBeli) + " | Sisa stok: " + stok);
+    }
+
+    public abstract void tampilInfo();
+
+    public abstract double hitungPajak(double harga);
 }

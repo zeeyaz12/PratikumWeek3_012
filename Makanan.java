@@ -1,7 +1,7 @@
 public class Makanan extends Produk {
     private int expired;
 
-    public Makanan(String nama, double harga, int stok, String kategori, int expired) {
+    public Makanan(String nama, double harga, int stok, int expired, String kategori) {
         super(nama, harga, stok, kategori);
         this.expired = expired;
     }
@@ -9,7 +9,7 @@ public class Makanan extends Produk {
     @Override
     public void tampilInfo() {
         System.out.println("Makanan");
-        super.tampilInfo();
+        
         System.out.println("Masa Expired: " + expired + " Hari");
     }
 
@@ -19,6 +19,30 @@ public class Makanan extends Produk {
         } else {
             this.expired = expired;
         }
+    }
+
+    // Overloading
+
+    // versi 1 - diskon otomatis jika beli >= 10
+    public double hitungDiskon(int jumlahBeli){
+        if(jumlahBeli >= 10){
+            return hitungTotalHarga(jumlahBeli) * 0.05;
+        }
+        return 0;
+    }
+
+    // versi 2 diskon dengan presentase costum
+    public double hitungDiskon(int jumlahBeli, double persenDiskon){
+        return hitungTotalHarga(jumlahBeli) * (persenDiskon / 100);
+    }
+
+    public double hitungHargaSetelahDiskon(int jumlahBeli){
+        return hitungTotalHarga(jumlahBeli) - hitungDiskon(jumlahBeli);
+    }
+
+    @Override
+    public double hitungPajak(double harga){
+        return harga = 0.10;
     }
 
     public void setExpired(int expired, String type) {
